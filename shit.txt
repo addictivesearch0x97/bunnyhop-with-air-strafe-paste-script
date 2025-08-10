@@ -1,0 +1,70 @@
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+local rootPart = character:WaitForChild("HumanoidRootPart")
+
+humanoid.AutoRotate = false -- отключаем автоповорот для резких изменений поворота
+
+local bodyVelocity = Instance.new("BodyVelocity")
+bodyVelocity.MaxForce = Vector3.new(0, 0, 0)
+bodyVelocity.Velocity = Vector3.new(0, 0, 0)
+bodyVelocity.Parent = rootPart
+
+local canBhop = true
+local speedMultiplier = 1.25
+local maxAirSpeed = 130
+
+humanoid.Jumping:Connect(function()
+	if humanoid:GetState() == Enum.HumanoidStateType.Freefall and canBhop then
+		bodyVelocity.MaxForce = Vector3.new(10000, 0, 10000)
+		local moveDir = humanoid.MoveDirection
+		local currentVel = rootPart.Velocity
+
+		-- Резко задаём новую скорость: масштабируем текущую по коэффициенту и добавляем скорость по движению
+		local newVel = currentVel * speedMultiplier + moveDir * 25
+		
+		-- Ограничиваем горизонтальную скорость
+		local horizontalVel = Vector3.new(newVel.X, 0, newVel.Z)
+		if horizontalVel.Magnitude > maxAirSpeed then
+			horizontalVel = horizontalVel.Unit * maxAirSpeed
+		end
+		
+		bodyVelocity.Velocity = Vector3.new(horizontalVel.X, currentVel.Y, horizontalVel.Z)
+		canBhop = false
+	end
+end)
+
+RunService.RenderStepped:Connect(function(dt)
+	local state = humanoid:GetState()
+	local moveDir = humanoid.MoveDirection
+
+	-- Резкий поворот персонажа в сторону MoveDirection
+	if moveDir.Magnitude > 0 then
+		local lookVector = Vector3.new(moveDir.X, 0, moveDir.Z).Unit
+		rootPart.CFrame = CFrame.new(rootPart.Position, rootPart.Position + lookVector)
+	end
+
+	if state == Enum.HumanoidStateType.Freefall then
+		if moveDir.Magnitude > 0 then
+			-- Резко обновляем velocity в стороне движения без постепенного накопления скорости
+			local currentVel = rootPart.Velocity
+			local horizontalVel = moveDir.Unit * maxAirSpeed
+
+			-- Вертикальная скорость сохраняется, горизонтальная - резкая и фиксированная по maxAirSpeed
+			bodyVelocity.Velocity = Vector3.new(horizontalVel.X, currentVel.Y, horizontalVel.Z)
+			bodyVelocity.MaxForce = Vector3.new(10000, 0, 10000)
+		else
+			bodyVelocity.MaxForce = Vector3.new(0, 0, 0)
+		end
+	else
+		bodyVelocity.MaxForce = Vector3.new(0, 0, 0)
+		canBhop = true
+	end
+end)
+
+humanoid.Died:Connect(function()
+	bodyVelocity:Destroy()
+end)
