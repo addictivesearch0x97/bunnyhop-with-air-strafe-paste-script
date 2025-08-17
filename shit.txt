@@ -6,7 +6,7 @@ local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
 local rootPart = character:WaitForChild("HumanoidRootPart")
 
-humanoid.AutoRotate = false -- отключаем автоповорот для ручного контроля поворота
+humanoid.AutoRotate = false
 
 local bodyVelocity = Instance.new("BodyVelocity")
 bodyVelocity.MaxForce = Vector3.new(0, 0, 0)
@@ -16,6 +16,51 @@ bodyVelocity.Parent = rootPart
 local canBhop = true
 local speedMultiplier = 1.25
 local maxAirSpeed = 130
+
+-- GUI
+local playerGui = player:WaitForChild("PlayerGui")
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "SpeedIndicatorGui"
+screenGui.Parent = playerGui
+
+local lettersFrame = Instance.new("Frame")
+lettersFrame.Size = UDim2.new(0, 130, 0, 20)
+lettersFrame.Position = UDim2.new(0.5, -65, 0.5, 40)
+lettersFrame.BackgroundTransparency = 1
+lettersFrame.Parent = screenGui
+
+local letterLabels = {}
+local speedText = ""
+local letterWidth = 10 -- ширина буквы для позиционирования
+
+local function setSpeedText(text)
+	-- Очистка предыдущих букв
+	for _, lbl in pairs(letterLabels) do
+		lbl:Destroy()
+	end
+	letterLabels = {}
+
+	local textLength = #text
+	local totalWidth = letterWidth * textLength
+	-- Перемещение букв для центрирования относительно lettersFrame (ширина 130)
+	local offsetX = (130 - totalWidth) / 2
+
+	for i = 1, textLength do
+		local c = text:sub(i,i)
+		local lbl = Instance.new("TextLabel")
+		lbl.BackgroundTransparency = 1
+		lbl.Text = c
+		lbl.TextColor3 = Color3.new(1, 1, 1)
+		lbl.Font = Enum.Font.SourceSansSemibold
+		lbl.TextSize = 14
+		lbl.Size = UDim2.new(0, letterWidth, 1, 0)
+		lbl.Position = UDim2.new(0, offsetX + (i-1)*letterWidth, 0, 0)
+		lbl.Parent = lettersFrame
+		letterLabels[#letterLabels+1] = lbl
+	end
+end
+
+setSpeedText("Speed: 0")
 
 humanoid.Jumping:Connect(function()
 	if humanoid:GetState() == Enum.HumanoidStateType.Freefall and canBhop then
@@ -39,12 +84,31 @@ RunService.RenderStepped:Connect(function(dt)
 	local state = humanoid:GetState()
 	local moveDir = humanoid.MoveDirection
 
-	-- Обычный резкий поворот модели — как было ранее
+	-- Обновляем текст скорости
+	local horizontalVelocity = Vector3.new(rootPart.Velocity.X, 0, rootPart.Velocity.Z)
+	local speed = math.floor(horizontalVelocity.Magnitude + 0.5)
+	local newText = "Speed: "..speed
+	if newText ~= speedText then
+		speedText = newText
+		setSpeedText(speedText)
+	end
+
+	-- Волнистая анимация alpha каждой буквы с минимальной прозрачностью 0.3
+	local time = tick()
+	for i, lbl in ipairs(letterLabels) do
+		local phase = i / 3
+		local alpha = 0.3 + 0.7 * (0.5 + 0.5 * math.sin(time * 6 + phase * math.pi * 2))
+		-- alpha меняется от 0.3 до примерно 1.0
+		lbl.TextTransparency = 1 - alpha
+	end
+
+	-- Поворот модели
 	if moveDir.Magnitude > 0 then
 		local lookVector = Vector3.new(moveDir.X, 0, moveDir.Z).Unit
 		rootPart.CFrame = CFrame.new(rootPart.Position, rootPart.Position + lookVector)
 	end
 
+	-- Управление скоростью в воздухе
 	if state == Enum.HumanoidStateType.Freefall then
 		if moveDir.Magnitude > 0 then
 			local currentVel = rootPart.Velocity
@@ -65,4 +129,5 @@ end)
 
 humanoid.Died:Connect(function()
 	bodyVelocity:Destroy()
+	screenGui:Destroy()
 end)
