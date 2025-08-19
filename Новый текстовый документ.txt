@@ -1,0 +1,518 @@
+local ScreenGui = Instance.new("ScreenGui")
+local menu = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local _1 = Instance.new("Frame")
+local UIGradient = Instance.new("UIGradient")
+local _2 = Instance.new("Frame")
+local UIGradient_2 = Instance.new("UIGradient")
+local b = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local Frame = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local _1_2 = Instance.new("Frame")
+local JitterAA = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local TextBox = Instance.new("TextBox")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local AirAA = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local TextBox_2 = Instance.new("TextBox")
+local TextLabel_4 = Instance.new("TextLabel")
+local TextLabel_5 = Instance.new("TextLabel")
+local TextLabel_6 = Instance.new("TextLabel")
+local UIGradient_3 = Instance.new("UIGradient")
+local keySystem = Instance.new("Frame")
+local UICorner_6 = Instance.new("UICorner")
+local TextBox_3 = Instance.new("TextBox")
+local TextButton = Instance.new("TextButton")
+local Frame_2 = Instance.new("Frame")
+local TextLabel_7 = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+
+menu.Name = "menu"
+menu.Parent = ScreenGui
+menu.BackgroundColor3 = Color3.fromRGB(64, 66, 83)
+menu.BackgroundTransparency = 0.170
+menu.BorderColor3 = Color3.fromRGB(0, 0, 0)
+menu.BorderSizePixel = 0
+menu.Position = UDim2.new(0.283546329, 0, 0.223577231, 0)
+menu.Size = UDim2.new(0, 542, 0, 407)
+menu.Visible = false
+
+UICorner.Parent = menu
+
+_1.Name = "1"
+_1.Parent = menu
+_1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_1.BorderSizePixel = 0
+_1.Position = UDim2.new(0.256457567, 0, 0, 0)
+_1.Size = UDim2.new(0, -1, 0, 407)
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(117, 124, 138)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(75, 78, 95))}
+UIGradient.Rotation = -180
+UIGradient.Parent = _1
+
+_2.Name = "2"
+_2.Parent = menu
+_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_2.BorderSizePixel = 0
+_2.Position = UDim2.new(0.254612535, 0, 0.26289925, 0)
+_2.Size = UDim2.new(0, -138, 0, 1)
+
+UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(117, 124, 138)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(75, 78, 95))}
+UIGradient_2.Rotation = 180
+UIGradient_2.Parent = _2
+
+b.Name = "b"
+b.Parent = menu
+b.BackgroundColor3 = Color3.fromRGB(88, 92, 113)
+b.BackgroundTransparency = 0.080
+b.BorderColor3 = Color3.fromRGB(0, 0, 0)
+b.BorderSizePixel = 0
+b.Position = UDim2.new(0.0147601478, 0, 0.297297299, 0)
+b.Size = UDim2.new(0, 121, 0, 39)
+
+UICorner_2.Parent = b
+
+TextLabel.Parent = b
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.0743801668, 0, 0.128205135, 0)
+TextLabel.Size = UDim2.new(0, 103, 0, 28)
+TextLabel.Font = Enum.Font.DenkOne
+TextLabel.Text = "Universal               "
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 15.000
+
+Frame.Parent = menu
+Frame.BackgroundColor3 = Color3.fromRGB(61, 63, 78)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.273062736, 0, 0.0663390681, 0)
+Frame.Size = UDim2.new(0, 178, 0, 180)
+
+UICorner_3.CornerRadius = UDim.new(0, 5)
+UICorner_3.Parent = Frame
+
+_1_2.Name = "1"
+_1_2.Parent = Frame
+_1_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_1_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_1_2.BorderSizePixel = 0
+_1_2.Position = UDim2.new(0.146067411, 0, 0.0333333351, 0)
+_1_2.Size = UDim2.new(0, 125, 0, 2)
+
+JitterAA.Name = "JitterAA"
+JitterAA.Parent = Frame
+JitterAA.BackgroundColor3 = Color3.fromRGB(90, 93, 115)
+JitterAA.BorderColor3 = Color3.fromRGB(0, 0, 0)
+JitterAA.BorderSizePixel = 0
+JitterAA.Position = UDim2.new(0.0505617969, 0, 0.166666672, 0)
+JitterAA.Size = UDim2.new(0, 24, 0, 21)
+JitterAA.Font = Enum.Font.SourceSans
+JitterAA.Text = ""
+JitterAA.TextColor3 = Color3.fromRGB(0, 0, 0)
+JitterAA.TextSize = 14.000
+
+UICorner_4.Parent = JitterAA
+
+TextBox.Parent = JitterAA
+TextBox.BackgroundColor3 = Color3.fromRGB(90, 93, 115)
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0, 0, 1.23809528, 0)
+TextBox.Size = UDim2.new(0, 45, 0, 25)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.Text = "165"
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextSize = 14.000
+
+TextLabel_2.Parent = JitterAA
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(1.875, 0, 1.23047602, 0)
+TextLabel_2.Size = UDim2.new(0, 58, 0, 24)
+TextLabel_2.Font = Enum.Font.SourceSansBold
+TextLabel_2.Text = "±                   "
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 14.000
+
+TextLabel_3.Parent = JitterAA
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Position = UDim2.new(1, 0, -0.0587303527, 0)
+TextLabel_3.Size = UDim2.new(0, 47, 0, 23)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "Jitter AA"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+
+AirAA.Name = "AirAA"
+AirAA.Parent = Frame
+AirAA.BackgroundColor3 = Color3.fromRGB(90, 93, 115)
+AirAA.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AirAA.BorderSizePixel = 0
+AirAA.Position = UDim2.new(0.0505617969, 0, 0.51111114, 0)
+AirAA.Size = UDim2.new(0, 24, 0, 21)
+AirAA.Font = Enum.Font.SourceSans
+AirAA.Text = ""
+AirAA.TextColor3 = Color3.fromRGB(0, 0, 0)
+AirAA.TextSize = 14.000
+
+UICorner_5.Parent = AirAA
+
+TextBox_2.Parent = AirAA
+TextBox_2.BackgroundColor3 = Color3.fromRGB(90, 93, 115)
+TextBox_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox_2.BorderSizePixel = 0
+TextBox_2.Position = UDim2.new(0, 0, 1.23809528, 0)
+TextBox_2.Size = UDim2.new(0, 45, 0, 25)
+TextBox_2.Font = Enum.Font.SourceSans
+TextBox_2.Text = "4200"
+TextBox_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox_2.TextSize = 14.000
+
+TextLabel_4.Parent = AirAA
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.BackgroundTransparency = 1.000
+TextLabel_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_4.BorderSizePixel = 0
+TextLabel_4.Position = UDim2.new(1.875, 0, 1.27809501, 0)
+TextLabel_4.Size = UDim2.new(0, 58, 0, 24)
+TextLabel_4.Font = Enum.Font.SourceSansBold
+TextLabel_4.Text = "Speed      "
+TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.TextSize = 14.000
+
+TextLabel_5.Parent = Frame
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.BackgroundTransparency = 1.000
+TextLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_5.BorderSizePixel = 0
+TextLabel_5.Position = UDim2.new(0.185393259, 0, 0.5, 0)
+TextLabel_5.Size = UDim2.new(0, 59, 0, 23)
+TextLabel_5.Font = Enum.Font.SourceSans
+TextLabel_5.Text = "Air spin AA"
+TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.TextSize = 14.000
+TextLabel_5.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_6.Parent = menu
+TextLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.BackgroundTransparency = 1.000
+TextLabel_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_6.BorderSizePixel = 0
+TextLabel_6.Position = UDim2.new(0.00738007389, 0, 0.0171990171, 0)
+TextLabel_6.Size = UDim2.new(0, 129, 0, 100)
+TextLabel_6.Font = Enum.Font.FredokaOne
+TextLabel_6.Text = "VoidSDK"
+TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.TextSize = 31.000
+
+UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(74, 77, 94)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_3.Rotation = -69
+UIGradient_3.Parent = TextLabel_6
+
+keySystem.Name = "keySystem"
+keySystem.Parent = ScreenGui
+keySystem.BackgroundColor3 = Color3.fromRGB(75, 78, 95)
+keySystem.BackgroundTransparency = 0.100
+keySystem.BorderColor3 = Color3.fromRGB(0, 0, 0)
+keySystem.BorderSizePixel = 0
+keySystem.Position = UDim2.new(0.362585515, 0, 0.354294479, 0)
+keySystem.Size = UDim2.new(0, 347, 0, 190)
+
+UICorner_6.CornerRadius = UDim.new(0, 5)
+UICorner_6.Parent = keySystem
+
+TextBox_3.Parent = keySystem
+TextBox_3.BackgroundColor3 = Color3.fromRGB(98, 102, 122)
+TextBox_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox_3.BorderSizePixel = 0
+TextBox_3.Position = UDim2.new(0.144092217, 0, 0.263157904, 0)
+TextBox_3.Size = UDim2.new(0, 246, 0, 50)
+TextBox_3.Font = Enum.Font.SourceSans
+TextBox_3.Text = ""
+TextBox_3.TextColor3 = Color3.fromRGB(145, 145, 145)
+TextBox_3.TextSize = 39.000
+
+TextButton.Parent = keySystem
+TextButton.BackgroundColor3 = Color3.fromRGB(98, 102, 122)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.288184434, 0, 0.66315788, 0)
+TextButton.Size = UDim2.new(0, 146, 0, 50)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "Check key"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextSize = 14.000
+
+Frame_2.Parent = keySystem
+Frame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_2.BorderSizePixel = 0
+Frame_2.Position = UDim2.new(0, 0, 0.17368421, 0)
+Frame_2.Size = UDim2.new(0, 347, 0, 1)
+
+TextLabel_7.Parent = keySystem
+TextLabel_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_7.BackgroundTransparency = 1.000
+TextLabel_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_7.BorderSizePixel = 0
+TextLabel_7.Position = UDim2.new(0.210374638, 0, 0, 0)
+TextLabel_7.Size = UDim2.new(0, 200, 0, 33)
+TextLabel_7.Font = Enum.Font.Unknown
+TextLabel_7.Text = "VoidSDK"
+TextLabel_7.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_7.TextSize = 14.000
+
+-- Scripts:
+
+local function ZLVGGRP_fake_script() -- JitterAA.LocalScript 
+	local script = Instance.new('LocalScript', JitterAA)
+
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	local player = Players.LocalPlayer
+	
+	local button = script.Parent
+	local textBox = button:WaitForChild("TextBox")
+	
+	-- Настройки
+	local JITTER_ENABLED = false
+	local GROUND_JITTER_DEG = 165 -- угол по умолчанию
+	local GROUND_JITTER_PERIOD = 0.01 -- скорость переключения (секунды)
+	
+	-- Состояние
+	local character, humanoid, rootPart
+	local jitterSign = 1
+	local jitterTimer = 0
+	local closestHRP = nil
+	local targetTimer = 0
+	local TARGET_REFRESH = 0.12
+	
+	-- Привязка персонажа
+	local function bindCharacter(char)
+		character = char
+		humanoid = character:WaitForChild("Humanoid")
+		rootPart = character:WaitForChild("HumanoidRootPart")
+		jitterSign = 1
+		jitterTimer = 0
+	end
+	
+	-- Поиск ближайшего врага
+	local function getClosestHRP()
+		local best, bestDist = nil, math.huge
+		for _, plr in ipairs(Players:GetPlayers()) do
+			if plr ~= player and plr.Character then
+				local hrp = plr.Character:FindFirstChild("HumanoidRootPart")
+				local hum = plr.Character:FindFirstChild("Humanoid")
+				if hrp and hum and hum.Health > 0 then
+					local dist = (hrp.Position - rootPart.Position).Magnitude
+					if dist < bestDist then
+						bestDist = dist
+						best = hrp
+					end
+				end
+			end
+		end
+		return best
+	end
+	
+	-- Клик по кнопке
+	button.MouseButton1Click:Connect(function()
+		JITTER_ENABLED = not JITTER_ENABLED
+		button.TextColor3 = JITTER_ENABLED and Color3.new(0,1,0) or Color3.new(1,1,1)
+	
+		local value = tonumber(textBox.Text)
+		if value and value >= 0 and value <= 180 then
+			GROUND_JITTER_DEG = value
+		end
+	end)
+	
+	-- Главный цикл
+	RunService.RenderStepped:Connect(function(dt)
+		if not JITTER_ENABLED or not character or not humanoid or humanoid.Health <= 0 or not rootPart then return end
+	
+		-- обновление цели
+		targetTimer += dt
+		if targetTimer >= TARGET_REFRESH or not closestHRP or not closestHRP.Parent then
+			targetTimer = 0
+			closestHRP = getClosestHRP()
+		end
+		if not closestHRP then return end
+	
+		if humanoid.FloorMaterial ~= Enum.Material.Air then
+			local dir = (closestHRP.Position - rootPart.Position)
+			if dir.Magnitude > 0.01 then
+				local yawToTarget = math.atan2(dir.X, dir.Z)
+				local backYaw = yawToTarget + math.pi -- разворот спиной
+	
+				-- таймер для переключения стороны
+				jitterTimer += dt
+				if jitterTimer >= GROUND_JITTER_PERIOD then
+					jitterTimer = 0
+					jitterSign = -jitterSign
+				end
+	
+				-- итоговый угол
+				local finalYaw = backYaw + math.rad(GROUND_JITTER_DEG) * jitterSign
+				rootPart.CFrame = CFrame.new(rootPart.Position) * CFrame.Angles(0, finalYaw, 0)
+			end
+		end
+	end)
+	
+	player.CharacterAdded:Connect(bindCharacter)
+	if player.Character then bindCharacter(player.Character) end
+	
+end
+coroutine.wrap(ZLVGGRP_fake_script)()
+local function ZRHPDNX_fake_script() -- AirAA.LocalScript 
+	local script = Instance.new('LocalScript', AirAA)
+
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	local player = Players.LocalPlayer
+	
+	local button = script.Parent
+	local textBox = button:WaitForChild("TextBox")
+	
+	-- Настройки
+	local AIR_ENABLED = false
+	local AIR_SPIN_DEG_PER_SEC = 4200 -- по умолчанию
+	local TARGET_REFRESH = 0.12
+	
+	-- Состояние
+	local character, humanoid, rootPart
+	local spinPhase = 0
+	local closestHRP = nil
+	local targetTimer = 0
+	
+	-- Привязка персонажа
+	local function bindCharacter(char)
+		character = char
+		humanoid = character:WaitForChild("Humanoid")
+		rootPart = character:WaitForChild("HumanoidRootPart")
+		spinPhase = 0
+	end
+	
+	-- Поиск ближайшего врага
+	local function getClosestHRP()
+		local best, bestDist = nil, math.huge
+		for _, plr in ipairs(Players:GetPlayers()) do
+			if plr ~= player and plr.Character then
+				local hrp = plr.Character:FindFirstChild("HumanoidRootPart")
+				local hum = plr.Character:FindFirstChild("Humanoid")
+				if hrp and hum and hum.Health > 0 then
+					local dist = (hrp.Position - rootPart.Position).Magnitude
+					if dist < bestDist then
+						bestDist = dist
+						best = hrp
+					end
+				end
+			end
+		end
+		return best
+	end
+	
+	-- Клик по кнопке
+	button.MouseButton1Click:Connect(function()
+		AIR_ENABLED = not AIR_ENABLED
+		button.TextColor3 = AIR_ENABLED and Color3.new(0,1,0) or Color3.new(1,1,1)
+	
+		local value = tonumber(textBox.Text)
+		if value and value > 0 then
+			AIR_SPIN_DEG_PER_SEC = value
+		end
+	end)
+	
+	-- Главный цикл
+	RunService.RenderStepped:Connect(function(dt)
+		if not AIR_ENABLED or not character or not humanoid or humanoid.Health <= 0 or not rootPart then return end
+	
+		-- обновление цели
+		targetTimer += dt
+		if targetTimer >= TARGET_REFRESH or not closestHRP or not closestHRP.Parent then
+			targetTimer = 0
+			closestHRP = getClosestHRP()
+		end
+		if not closestHRP then return end
+	
+		if humanoid.FloorMaterial == Enum.Material.Air then
+			local dir = (closestHRP.Position - rootPart.Position)
+			if dir.Magnitude > 0.01 then
+				local yawToTarget = math.atan2(dir.X, dir.Z)
+				local backYaw = yawToTarget + math.pi -- всегда спиной
+	
+				-- накопительный спин
+				spinPhase = (spinPhase + math.rad(AIR_SPIN_DEG_PER_SEC) * dt) % (math.pi * 2)
+				local finalYaw = backYaw + spinPhase
+	
+				rootPart.CFrame = CFrame.new(rootPart.Position) * CFrame.Angles(0, finalYaw, 0)
+			end
+		end
+	end)
+	
+	player.CharacterAdded:Connect(bindCharacter)
+	if player.Character then bindCharacter(player.Character) end
+	
+end
+coroutine.wrap(ZRHPDNX_fake_script)()
+local function AIRL_fake_script() -- menu.LocalScript 
+	local script = Instance.new('LocalScript', menu)
+
+	local UserInputService = game:GetService("UserInputService")
+	
+	-- Указываем сам Frame меню напрямую
+	local frame = script.Parent -- если скрипт лежит внутри Menu (Frame)
+	
+	-- Переключение видимости
+	UserInputService.InputBegan:Connect(function(input, gameProcessed)
+		if gameProcessed then return end
+		if input.KeyCode == Enum.KeyCode.Insert then
+			frame.Visible = not frame.Visible
+		end
+	end)
+	
+end
+coroutine.wrap(AIRL_fake_script)()
+local function ZWFUAVJ_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	local button = script.Parent -- Предполагаем, что скрипт находится внутри кнопки
+	local textBox = button:FindFirstAncestor("keySystem"):FindFirstChildOfClass("TextBox") -- Ищем TextBox внутри фрейма KeySystem
+	local keySystemFrame = button:FindFirstAncestor("keySystem") -- Находим фрейм KeySystem
+	local menuFrame = button:FindFirstAncestor("keySystem"):FindFirstAncestor("ScreenGui"):FindFirstChild("menu") -- Находим фрейм menu
+	
+	local correctText = "Voidk_7X9F2R5T" -- Замените это на нужный текст/ключ
+	
+	button.MouseButton1Click:Connect(function()
+		if textBox.Text == correctText then
+			-- Если текст совпадает
+			menuFrame.Visible = true -- Показываем фрейм menu
+			keySystemFrame:Destroy() -- Удаляем фрейм KeySystem
+		else
+			-- Если текст не совпадает
+			textBox.Text = "Неверный ключ!" -- Можно изменить на свое сообщение
+			task.wait(1) -- Ждем 1 секунду
+			textBox.Text = "" -- Очищаем TextBox
+		end
+	end)
+end
+coroutine.wrap(ZWFUAVJ_fake_script)()
